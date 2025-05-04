@@ -1,0 +1,11 @@
+Copyright (c) 2025 K&A Digital Studio
+All rights reserved.
+
+This template is licensed under the Envato Market Regular License.
+You MAY:
+  • Use it in one end-product (for yourself or a client).
+  • Modify, customize, and integrate as needed.
+You MAY NOT:
+  • Resell, redistribute, or include in another template package.
+  • Claim authorship or sub-license it.
+DISCLAIMER: provided “as is” without warranty. No liability for damages.
