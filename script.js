@@ -21,26 +21,31 @@ document.addEventListener('DOMContentLoaded', function () {
   menuBtn.addEventListener('click', toggleMenu);
   menuOverlay.addEventListener('click', toggleMenu);
 
-  // Navigation functionality
   document.querySelectorAll('.nav_link').forEach((link) => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
 
-      if (targetSection) {
-        // Close mobile menu if open
-        if (navList.classList.contains('active')) {
-          toggleMenu();
-        }
+      const targetSection = document.querySelector(link.getAttribute('href'));
+      if (!targetSection) return;
 
-        // Wait for menu to close before scrolling
-        setTimeout(() => {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }, 300); // Match this with your CSS transition time
+      if (navList.classList.contains('active')) {
+        // Listens for the menu to close before scrolling
+        const onNavClosed = (e) => {
+          if (e.propertyName === 'right') {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+            navList.removeEventListener('transitionend', onNavClosed);
+          }
+        };
+        navList.addEventListener('transitionend', onNavClosed);
+        toggleMenu();
+      } else {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
       }
     });
   });
