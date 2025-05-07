@@ -4,6 +4,82 @@
  * Customize colors, fonts, and other variables below
  */
 
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins/Poppins-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway/static/Raleway-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway/static/Raleway-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway/static/Raleway-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf')
+    format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf')
+    format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf')
+    format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors */
   --primary-color: #d4af37;
@@ -13,9 +89,10 @@
   --background-color: #fff;
   --overlay-color: rgba(0, 0, 0, 0.6);
 
-  /* Typography */
-  --heading-font: 'Playfair Display', serif;
+  /* Typography - Font Families */
+  --heading-font: 'Raleway', sans-serif;
   --body-font: 'Poppins', sans-serif;
+  --mono-font: 'Source Code Pro', monospace;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -96,51 +173,43 @@ img {
   align-items: center;
   padding: var(--spacing-sm);
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header_logo h1 {
   font-size: 1.5rem;
   color: var(--primary-color);
+  white-space: nowrap;
 }
 
 .nav_list {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 300px;
-  height: 100vh;
-  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
   list-style: none;
-  padding: var(--spacing-lg) var(--spacing-md);
   margin: 0;
-  transition: right var(--transition-fast);
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
-}
-
-.nav_list.active {
-  right: 0;
+  padding: 0;
 }
 
 .nav_item {
-  margin-bottom: var(--spacing-md);
+  margin: 0 var(--spacing-sm);
 }
 
 .nav_link {
   display: block;
   padding: var(--spacing-xs) var(--spacing-sm);
   transition: var(--transition-fast);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .nav_link:hover {
   color: var(--primary-color);
-  transform: translateX(5px);
 }
 
 .header_menu-btn {
-  display: block;
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -171,16 +240,15 @@ img {
   transform-origin: left;
 }
 
-/* Add overlay when menu is open */
 .menu-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  display: none;
 }
 
 .menu-overlay.active {
@@ -239,6 +307,7 @@ img {
 
 .hero_btn:hover {
   transform: translateY(-3px);
+  filter: brightness(90%);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -415,7 +484,7 @@ img {
 }
 
 .form_submit:hover {
-  background-color: #c19b2e;
+  filter: brightness(90%);
 }
 
 .contact_info {
@@ -553,6 +622,45 @@ img {
 }
 
 /* Media Queries */
+@media (max-width: 767px) {
+  .header_menu-btn {
+    display: block;
+  }
+
+  .nav_list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--background-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-lg) var(--spacing-md);
+    transition: right var(--transition-fast);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .nav_list.active {
+    right: 0;
+  }
+
+  .nav_item {
+    margin: 0 0 var(--spacing-md) 0;
+    width: 100%;
+  }
+
+  .nav_link {
+    font-size: 1.1rem;
+  }
+
+  .nav_link:hover {
+    transform: translateX(5px);
+  }
+}
+
 @media (min-width: 768px) {
   .header_menu-btn {
     display: none;
@@ -564,19 +672,23 @@ img {
     width: auto;
     height: auto;
     padding: 0;
+    margin: 0;
     background: none;
     box-shadow: none;
     right: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--spacing-xs);
   }
 
   .nav_item {
-    margin-bottom: 0;
-    margin-left: var(--spacing-md);
+    margin: 0;
   }
 
   .nav_link {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 1rem;
+    padding: var(--spacing-xs);
+    font-size: 0.9rem;
   }
 
   .nav_link:hover {
@@ -611,5 +723,32 @@ img {
 
   .gallery_grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav_link {
+    font-size: 1rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  /* let header fill the whole viewport again */
+  .header_container {
+    max-width: none; /* no more 1200px cap */
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  /* make the nav wrapper grow to fill the space between logo & edge */
+  .header_nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end; /* push the UL all the way right */
+    align-items: center;
+  }
+
+  /* ensure the list itself is a flex row of links */
+  .nav_list {
+    display: flex;
+    gap: var(--spacing-md);
   }
 }
