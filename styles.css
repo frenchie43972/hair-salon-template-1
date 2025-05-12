@@ -160,7 +160,8 @@ img {
   color: var(--secondary-color);
 }
 
-/* Header Styles */
+/* Header and Navbar Styles */
+
 .header {
   position: fixed;
   top: 0;
@@ -221,27 +222,26 @@ img {
   z-index: 1002;
 }
 
-.menu-btn_line {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: var(--secondary-color);
-  margin: 5px 0;
+.header_menu-btn i {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
   transition: var(--transition-fast);
 }
 
-.header_menu-btn.active .menu-btn_line:nth-child(1) {
-  transform: rotate(45deg);
-  transform-origin: left;
+.header_menu-btn .icon-open {
+  display: inline-block;
 }
 
-.header_menu-btn.active .menu-btn_line:nth-child(2) {
-  opacity: 0;
+.header_menu-btn .icon-close {
+  display: none;
 }
 
-.header_menu-btn.active .menu-btn_line:nth-child(3) {
-  transform: rotate(-45deg);
-  transform-origin: left;
+.header_menu-btn.active .icon-open {
+  display: none;
+}
+
+.header_menu-btn.active .icon-close {
+  display: inline-block;
 }
 
 .menu-overlay {
@@ -261,17 +261,42 @@ img {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  background-image: url('placeholder-hero.jpg');
-  background-size: cover;
-  background-position: center;
+  /* max-width: 600px; */
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
-  margin-top: 60px; /* Account for fixed header */
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero_overlay {
@@ -301,10 +326,13 @@ img {
 
 .hero_btn {
   display: inline-block;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   padding: 1rem 2rem;
   background-color: var(--primary-color);
   color: white;
-  border-radius: 30px;
+  border-radius: 20px;
   font-weight: bold;
   transition: var(--transition-fast);
 }

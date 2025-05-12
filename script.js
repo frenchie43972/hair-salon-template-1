@@ -52,12 +52,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Gallery Lightbox
   const galleryItems = [
-    { src: 'gallery-1.jpg', alt: 'Hair Styling Example 1' },
-    { src: 'gallery-2.jpg', alt: 'Hair Styling Example 2' },
-    { src: 'gallery-3.jpg', alt: 'Hair Styling Example 3' },
-    { src: 'gallery-4.jpg', alt: 'Hair Styling Example 4' },
-    { src: 'gallery-5.jpg', alt: 'Hair Styling Example 5' },
-    { src: 'gallery-6.jpg', alt: 'Hair Styling Example 6' },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 1',
+    },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 2',
+    },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 3',
+    },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 4',
+    },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 5',
+    },
+    {
+      src: './images/agustin-fernandez-image-2.jpg',
+      alt: 'Hair Styling Example 6',
+    },
   ];
 
   const galleryGrid = document.querySelector('.gallery_grid');
