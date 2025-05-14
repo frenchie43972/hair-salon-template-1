@@ -261,7 +261,6 @@ img {
 
 /* Hero Section */
 .hero {
-  /* max-width: 600px; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -322,6 +321,11 @@ img {
 .hero_subtitle {
   font-size: 1.2rem;
   margin-bottom: var(--spacing-md);
+}
+
+.hero_subtitle,
+.hero_title {
+  color: #dbdbd5;
 }
 
 .hero_btn {
@@ -690,6 +694,21 @@ img {
 
   .nav_link:hover {
     transform: translateX(5px);
+  }
+
+  .hero_content {
+    padding: var(--spacing-md) var(--spacing-xs);
+    width: 100%;
+  }
+  .hero_title {
+    font-size: 2.2rem; /* smaller headline */
+  }
+  .hero_subtitle {
+    font-size: 1.2rem; /* smaller subtitle */
+  }
+  .hero_btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
   }
 }
 

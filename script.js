@@ -3,7 +3,7 @@
  * JavaScript functionality for lightbox, team slider, and form validation
  */
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   // Mobile Menu Toggle
   const menuBtn = document.querySelector('.header_menu-btn');
   const navList = document.querySelector('.nav_list');
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Gallery Lightbox
   const galleryItems = [
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/toa-heftiba-image-6.jpg',
       alt: 'Hair Styling Example 1',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/jonathan-weiss-image-5.jpg',
       alt: 'Hair Styling Example 2',
     },
     {
@@ -65,27 +65,22 @@ document.addEventListener('DOMContentLoaded', function () {
       alt: 'Hair Styling Example 3',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/george-bohunicky-image-1.jpg',
       alt: 'Hair Styling Example 4',
-    },
-    {
-      src: './images/agustin-fernandez-image-2.jpg',
-      alt: 'Hair Styling Example 5',
-    },
-    {
-      src: './images/agustin-fernandez-image-2.jpg',
-      alt: 'Hair Styling Example 6',
     },
   ];
 
   const galleryGrid = document.querySelector('.gallery_grid');
 
+  console.log(galleryItems);
+
   // Populate gallery grid
   galleryItems.forEach((item) => {
     const galleryItem = document.createElement('div');
     galleryItem.className = 'gallery_item';
+
     galleryItem.innerHTML = `
-            <img src="${item.src}" alt="${item.alt}" loading="lazy">
+            <img src="${item.src}" alt="${item.alt}">
         `;
     galleryGrid.appendChild(galleryItem);
   });
