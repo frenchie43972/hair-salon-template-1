@@ -394,7 +394,7 @@ img {
 
 .gallery_item {
   position: relative;
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/2;
   overflow: hidden;
   background: #f0f0f0;
   cursor: pointer;
