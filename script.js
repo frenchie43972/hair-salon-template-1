@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Gallery Lightbox
   const galleryItems = [
     {
-      src: './images/toa-heftiba-image-6.jpg',
+      src: './images/agustin-fernandez-image-2.jpg',
       alt: 'Hair Styling Example 1',
     },
     {
-      src: './images/jonathan-weiss-image-5.jpg',
+      src: './images/toa-heftiba-image-6.jpg',
       alt: 'Hair Styling Example 2',
     },
     {
