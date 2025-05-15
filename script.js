@@ -57,24 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
       alt: 'Hair Styling Example 1',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/toa-heftiba-image-6.jpg',
       alt: 'Hair Styling Example 2',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/jonathan-weiss-image-5.jpg',
       alt: 'Hair Styling Example 3',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/george-bohunicky-image-1.jpg',
       alt: 'Hair Styling Example 4',
     },
     {
-      src: './images/agustin-fernandez-image-2.jpg',
+      src: './images/jessie-dee-dabrowski-image-4.jpg',
       alt: 'Hair Styling Example 5',
-    },
-    {
-      src: './images/agustin-fernandez-image-2.jpg',
-      alt: 'Hair Styling Example 6',
     },
   ];
 
@@ -85,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const galleryItem = document.createElement('div');
     galleryItem.className = 'gallery_item';
     galleryItem.innerHTML = `
-            <img src="${item.src}" alt="${item.alt}" loading="lazy">
+            <img src="${item.src}" alt="${item.alt}">
         `;
     galleryGrid.appendChild(galleryItem);
   });
