@@ -8,6 +8,7 @@ image-4: "Jessie Dee" Dabrowski on Unsplash
 image-5: Jonathan Weiss on Unsplash
 image-6: Toa Heftiba on Unsplash
 image-7: Anna-Ruth Folk on Unsplash
+image-8: Adam Winger on Unsplash
 
 TO-DO
 
