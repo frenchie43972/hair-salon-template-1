@@ -420,8 +420,13 @@ img {
 }
 
 .team_slider {
-  position: relative;
-  overflow: hidden;
+  /* position: relative;
+  overflow: hidden; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
 .team_member {

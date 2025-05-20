@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const galleryGrid = document.querySelector('.gallery_grid');
 
-  console.log(galleryItems);
-
   // Populate gallery grid
   galleryItems.forEach((item) => {
     const galleryItem = document.createElement('div');
@@ -112,34 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.style.display = 'none';
     }
   });
-
-  // Team Slider
-  const teamSlider = document.querySelector('.team_slider');
-  const teamMembers = document.querySelectorAll('.team_member');
-  const prevBtn = document.querySelector('.slider_btn--prev');
-  const nextBtn = document.querySelector('.slider_btn--next');
-  let currentSlide = 0;
-
-  function updateSlider() {
-    const offset = -currentSlide * 100;
-    teamSlider.style.transform = `translateX(${offset}%)`;
-  }
-
-  prevBtn.addEventListener('click', function () {
-    currentSlide = (currentSlide - 1 + teamMembers.length) % teamMembers.length;
-    updateSlider();
-  });
-
-  nextBtn.addEventListener('click', function () {
-    currentSlide = (currentSlide + 1) % teamMembers.length;
-    updateSlider();
-  });
-
-  // Auto-advance slider every 5 seconds
-  setInterval(function () {
-    currentSlide = (currentSlide + 1) % teamMembers.length;
-    updateSlider();
-  }, 5000);
 
   // Form Validation
   const bookingForm = document.getElementById('bookingForm');

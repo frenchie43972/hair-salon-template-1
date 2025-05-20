@@ -9,6 +9,9 @@ image-5: Jonathan Weiss on Unsplash
 image-6: Toa Heftiba on Unsplash
 image-7: Anna-Ruth Folk on Unsplash
 image-8: Adam Winger on Unsplash
+image-9: Charles Shaffer on Unsplash
+image-10: Adam Winger on Unsplash
+image-11: Luiz Paulo R Santos on Unsplash
 
 TO-DO
 
