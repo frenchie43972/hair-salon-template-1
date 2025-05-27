@@ -7,11 +7,20 @@
       name="description"
       content="Modern hair salon template - A responsive website template for hair salons and beauty services"
     />
-    <meta
-      name="keywords"
-      content="hair salon, beauty, styling, haircut, template"
-    />
+
     <title>Glamour Salon - Modern Hair & Beauty Services</title>
+    <meta
+      property="og:title"
+      content="Glamour Salon – Modern Hair & Beauty Services"
+    />
+    <meta
+      property="og:description"
+      content="Responsive hair salon template for styling, coloring, treatments, and more."
+    />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:type" content="website" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,13 +37,14 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Header with Navigation -->
     <header class="header">
       <div class="header_container">
         <div class="header_logo">
           <h1>Glamour Salon</h1>
         </div>
-        <nav class="header_nav">
+        <nav class="header_nav" role="navigation">
           <ul class="nav_list">
             <li class="nav_item">
               <a href="#home" class="nav_link">Home</a>
@@ -53,145 +63,145 @@
             </li>
           </ul>
         </nav>
-        <button class="header_menu-btn" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars icon-open"></i> 
+
+        <button
+          id="menu-toggle"
+          class="header_menu-btn"
+          aria-label="Toggle menu"
+          aria-controls="menu-overlay"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars icon-open"></i>
           <i class="fa-solid fa-xmark icon-close"></i>
         </button>
-
       </div>
-      </div>
-
     </header>
 
-    <!-- Menu Overlay -->
-    <div class="menu-overlay"></div>
+    <main id="main">
+      <!-- Menu Overlay -->
+      <div class="menu-overlay" id="menu-overlay"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero_overlay"></div>
-      <div class="hero_content">
-        <h2 class="hero_title">Transform Your Look</h2>
-        <p class="hero_subtitle">
-          Professional hair styling and beauty services
-        </p>
-        <a href="#contact" class="hero_btn">Contact Us</a>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-      <div class="section_container">
-        <h2 class="section_title">Our Services</h2>
-        <div class="services_grid">
-          <div class="service_card">
-            <i class="fas fa-cut service_icon"></i>
-            <h3 class="service_title">Haircut & Styling</h3>
-            <p class="service_description">
-              Professional haircuts and styling for all hair types.
-            </p>
-          </div>
-          <div class="service_card">
-            <i class="fas fa-paint-brush service_icon"></i>
-            <h3 class="service_title">Hair Coloring</h3>
-            <p class="service_description">
-              Expert color treatments and highlights.
-            </p>
-          </div>
-          <div class="service_card">
-            <i class="fas fa-spa service_icon"></i>
-            <h3 class="service_title">Hair Treatments</h3>
-            <p class="service_description">
-              Revitalizing treatments for healthy hair.
-            </p>
-          </div>
-          <div class="service_card">
-            <i class="fas fa-magic service_icon"></i>
-            <h3 class="service_title">Special Occasion</h3>
-            <p class="service_description">
-              Wedding and special event styling.
-            </p>
-          </div>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero_overlay"></div>
+        <div class="hero_content">
+          <h2 class="hero_title">Transform Your Look</h2>
+          <p class="hero_subtitle">
+            Professional hair styling and beauty services
+          </p>
+          <a href="#contact" class="hero_btn">Contact Us</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-      <div class="section_container">
-        <h2 class="section_title">Our Work</h2>
-        <div class="gallery_grid">
-          <!-- Gallery items will be populated by JavaScript -->
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-      <div class="section_container">
-        <h2 class="section_title">Our Team</h2>
-        <div class="team_slider">
-          <div class="team_member">
-            <img
-              src="./images/team-members/adam-winger-image-8.jpg"
-              alt="Stylist Sarah Johnson"
-              class="team_image"
-            />
-            <h3 class="team_name">Sarah Johnson</h3>
-            <p class="team_role">Senior Stylist</p>
-          </div>
-          <div class="team_member">
-            <img
-              src="./images/team-members/charles-shaffer-image-9.jpg"
-              alt="Stylist Michael Chesworth"
-              class="team_image"
-            />
-            <h3 class="team_name">Michael Chesworth</h3>
-            <p class="team_role">Color Specialist</p>
-          </div>
-          <div class="team_member">
-            <img
-              src="./images/team-members/luiz-paulo-r-santos-image-11.jpg"
-              alt="Stylist Emma Davis"
-              class="team_image"
-            />
-            <h3 class="team_name">Emma Davis</h3>
-            <p class="team_role">Hair Treatment Expert</p>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="section_container">
-        <h2 class="section_title">Book Your Appointment</h2>
-        <div class="contact_grid">
-          <div class="contact_info">
-            <h3>Contact Information</h3>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> 123 Beauty Street, City,
-              Country
-            </p>
-            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-            <p><i class="fas fa-envelope"></i> info@glamoursalon.com</p>
-            <div class="contact_map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2152091793!2d-73.9878448!3d40.7579747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1645555555555!5m2!1sen!2sus"
-                width="100%"
-                height="300"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-              >
-              </iframe>
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="section_container">
+          <h2 class="section_title">Our Services</h2>
+          <div class="services_grid">
+            <div class="service_card">
+              <i class="fas fa-cut service_icon"></i>
+              <h3 class="service_title">Haircut & Styling</h3>
+              <p class="service_description">
+                Professional haircuts and styling for all hair types.
+              </p>
+            </div>
+            <div class="service_card">
+              <i class="fas fa-paint-brush service_icon"></i>
+              <h3 class="service_title">Hair Coloring</h3>
+              <p class="service_description">
+                Expert color treatments and highlights.
+              </p>
+            </div>
+            <div class="service_card">
+              <i class="fas fa-spa service_icon"></i>
+              <h3 class="service_title">Hair Treatments</h3>
+              <p class="service_description">
+                Revitalizing treatments for healthy hair.
+              </p>
+            </div>
+            <div class="service_card">
+              <i class="fas fa-magic service_icon"></i>
+              <h3 class="service_title">Special Occasion</h3>
+              <p class="service_description">
+                Wedding and special event styling.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- Gallery Section -->
+      <section id="gallery" class="gallery">
+        <div class="section_container">
+          <h2 class="section_title">Our Work</h2>
+          <div class="gallery_grid">
+            <!-- Gallery items will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="team">
+        <div class="section_container">
+          <h2 class="section_title">Our Team</h2>
+          <div class="team_slider">
+            <div class="team_member">
+              <img
+                src="./images/team-members/adam-winger-image-8.jpg"
+                alt="Stylist Sarah Johnson"
+                class="team_image"
+              />
+              <h3 class="team_name">Sarah Johnson</h3>
+              <p class="team_role">Senior Stylist</p>
+            </div>
+            <div class="team_member">
+              <img
+                src="./images/team-members/charles-shaffer-image-9.jpg"
+                alt="Stylist Michael Chesworth"
+                class="team_image"
+              />
+              <h3 class="team_name">Michael Chesworth</h3>
+              <p class="team_role">Color Specialist</p>
+            </div>
+            <div class="team_member">
+              <img
+                src="./images/team-members/luiz-paulo-r-santos-image-11.jpg"
+                alt="Stylist Emma Davis"
+                class="team_image"
+              />
+              <h3 class="team_name">Emma Davis</h3>
+              <p class="team_role">Hair Treatment Expert</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="section_container">
+          <h2 class="section_title">Book Your Appointment</h2>
+          <div class="contact_grid">
+            <address class="contact_info">
+              <h3>Contact Information</h3>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Beauty Street, City,
+                Country
+              </p>
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@glamoursalon.com</p>
+              <div class="contact_map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2152091793!2d-73.9878448!3d40.7579747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1645555555555!5m2!1sen!2sus"
+                  allowfullscreen=""
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+            </address>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- Footer -->
     <footer class="footer">
       <div class="footer_container">

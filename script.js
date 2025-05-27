@@ -1,6 +1,6 @@
 /*
  * Glamour Salon - Modern Hair Salon Template
- * JavaScript functionality for lightbox, team slider, and form validation
+ * JavaScript functionality for lightbox, team slider
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = menuBtn.classList.contains('active')
       ? 'hidden'
       : '';
+
+    const isOpen = menuBtn.classList.contains('active');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
   }
 
   menuBtn.addEventListener('click', toggleMenu);
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryItem.className = 'gallery_item';
 
     galleryItem.innerHTML = `
-            <img src="${item.src}" alt="${item.alt}">
+            <img src="${item.src}" alt="${item.alt}" loading="lazy">
         `;
     galleryGrid.appendChild(galleryItem);
   });
@@ -110,106 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.style.display = 'none';
     }
   });
-
-  // Form Validation
-  const bookingForm = document.getElementById('bookingForm');
-
-  bookingForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
-    const service = document.getElementById('service');
-    const date = document.getElementById('date');
-    let isValid = true;
-
-    // Name validation
-    if (name.value.trim() === '') {
-      showError(name, 'Name is required');
-      isValid = false;
-    } else {
-      removeError(name);
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value)) {
-      showError(email, 'Please enter a valid email');
-      isValid = false;
-    } else {
-      removeError(email);
-    }
-
-    // Phone validation
-    const phoneRegex = /^\+?[\d\s-]{10,}$/;
-    if (!phoneRegex.test(phone.value)) {
-      showError(phone, 'Please enter a valid phone number');
-      isValid = false;
-    } else {
-      removeError(phone);
-    }
-
-    // Service validation
-    if (service.value === '') {
-      showError(service, 'Please select a service');
-      isValid = false;
-    } else {
-      removeError(service);
-    }
-
-    // Date validation
-    if (date.value === '') {
-      showError(date, 'Please select a date');
-      isValid = false;
-    } else {
-      removeError(date);
-    }
-
-    if (isValid) {
-      // Here you would typically send the form data to a server
-      alert('Appointment booked successfully!');
-      bookingForm.reset();
-    }
-  });
-
-  function showError(input, message) {
-    const formGroup = input.parentElement;
-    const error =
-      formGroup.querySelector('.error-message') ||
-      document.createElement('div');
-    error.className = 'error-message';
-    error.textContent = message;
-
-    if (!formGroup.querySelector('.error-message')) {
-      formGroup.appendChild(error);
-    }
-
-    input.classList.add('error');
-  }
-
-  function removeError(input) {
-    const formGroup = input.parentElement;
-    const error = formGroup.querySelector('.error-message');
-
-    if (error) {
-      formGroup.removeChild(error);
-    }
-
-    input.classList.remove('error');
-  }
-
-  // Lazy loading for images
-  if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach((img) => {
-      img.src = img.dataset.src;
-    });
-  } else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-  }
 });
