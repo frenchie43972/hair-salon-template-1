@@ -53,33 +53,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf')
-    format('ttf');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf')
-    format('ttf');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('./fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf')
-    format('ttf');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* Colors */
   --primary-color: #d4af37;
@@ -92,7 +65,6 @@
   /* Typography - Font Families */
   --heading-font: 'Raleway', sans-serif;
   --body-font: 'Poppins', sans-serif;
-  --mono-font: 'Source Code Pro', monospace;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -435,8 +407,6 @@ img {
 }
 
 .team_slider {
-  /* position: relative;
-  overflow: hidden; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -467,9 +437,6 @@ img {
 }
 
 /* Contact Section */
-/* .contact {
-  padding: var(--spacing-lg) 0;
-} */
 
 .contact_grid {
   display: flex;
@@ -504,29 +471,6 @@ img {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
-}
-
-.contact_social {
-  display: flex;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-}
-
-.contact_social a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-fast);
-}
-
-.contact_social a:hover {
-  transform: translateY(-3px);
 }
 
 /* Footer */
@@ -568,6 +512,7 @@ img {
 
 .footer_social {
   display: flex;
+  font-size: 1.5rem;
   gap: var(--spacing-sm);
 }
 
